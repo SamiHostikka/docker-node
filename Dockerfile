@@ -13,3 +13,8 @@ RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/
 # Install Yarn package manager
 RUN npm install --global yarn \
   && npm cache clean
+
+# Exec
+USER app
+ENTRYPOINT ["dumb-init"]
+CMD ["node"]
