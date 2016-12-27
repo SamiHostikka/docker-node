@@ -1,0 +1,10 @@
+#!/bin/bash
+
+TAG=onbuild
+
+if [[ "$DOCKER_TAG" != *"$TAG" ]]; then
+  TAG=latest
+fi
+
+docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
+docker push $DOCKER_REPO:$TAG
