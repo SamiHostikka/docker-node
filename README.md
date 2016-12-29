@@ -29,7 +29,7 @@ This image is based on official [Node image](https://github.com/nodejs/docker-no
 Onbuild image takes care of installing dependencies and then executes your app by using `yarn start`.
 
     # Dockerfile
-    FROM hstkk/node:onbuild
+    FROM hstkk/node-onbuild
     # additional stuff
 
 Build and run your own image:
@@ -47,7 +47,7 @@ Build and run your own image:
     version: '2'
     services:
       app:
-        image: hstkk/node:onbuild
+        image: hstkk/node-onbuild
         volumes:
           - .:/usr/src/app
         environment:
