@@ -19,10 +19,28 @@ This image is based on official [Node image](https://github.com/nodejs/docker-no
     app@3f6897f307c3:~$ echo Hello world
     Hello world
 
+Example of Yarn usage:
+
+    docker run -v $(pwd):/usr/src/app --rm -it hstk/node yarn init
+    yarn init v0.18.1
+    question name (app): foo
+    question version (1.0.0): bar
+    question description: baz
+    question entry point (index.js):
+    question git repository:
+    question author:
+    question license (MIT):
+    success Saved package.json
+    Done in 11.37s.
+
 ### Inline command(s)
 
     docker run hstkk/node node -e "console.log('Hello world');"
     Hello world
+
+Example of Yarn usage:
+
+    docker run -v $(pwd):/usr/src/app --rm -t hstkk/node yarn add greeting
 
 ### Create a new image based on this
 
