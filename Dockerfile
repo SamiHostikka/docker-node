@@ -2,8 +2,10 @@ FROM node:7.3.0-slim
 MAINTAINER hstkk
 
 # Add unprivileged user
-RUN useradd -d /usr/src/app -m -r app
-WORKDIR /usr/src/app
+ENV WORKDIR /usr/src/app
+RUN useradd -d $WORKDIR -m -r app \
+  && chown app $WORKDIR
+WORKDIR $WORKDIR
 
 # Install Dumb-init for faster signal handling
 ENV DUMB_INIT_VERSION 1.2.0
