@@ -3,7 +3,6 @@
 This image is based on official [Node image](https://github.com/nodejs/docker-node) and contains:
 
 - [Dumb-init](https://github.com/Yelp/dumb-init) for faster signal handling
-- [Yarn](https://yarnpkg.com/) package manager
 - Unprivileged user account *app* (`/usr/src/app`)
 - Onbuild variant
 
