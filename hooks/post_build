@@ -1,3 +1,10 @@
 #!/bin/sh
 
-printenv
+VERSION=$(head -1 Dockerfile|grep -Eo '[0-9]+')
+
+if [ -z "$VERSION" ]; then
+  exit 0
+fi
+
+docker tag $IMAGE_NAME $DOCKER_REPO:$VERSION
+docker push $DOCKER_REPO:$VERSION
