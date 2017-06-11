@@ -1,4 +1,4 @@
-FROM node:7-slim
+FROM node:8-slim
 MAINTAINER hstkk
 
 # Add unprivileged user
