@@ -1,4 +1,4 @@
-FROM hstkk/node:8
+FROM hstkk/node:9
 MAINTAINER hstkk
 
 # Env
